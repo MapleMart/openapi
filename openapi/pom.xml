@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.hyf</groupId>
+	<artifactId>openapi</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>openapi</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<encoding>UTF-8</encoding>
+		<skipTests>true</skipTests>
+		<java_version>1.7</java_version>
+		<java_source_version>1.7</java_source_version>
+		<java_target_version>1.7</java_target_version>
+		<maven_compiler_plugin>3.3</maven_compiler_plugin>
+		<maven_shade_plugin>1.7.1</maven_shade_plugin>
+		<spring_version>3.2.9.RELEASE</spring_version>
+	</properties>
+
+	<dependencies>
+	</dependencies>
+
+	<modules>
+		<module>openapi-interface</module>
+		<module>openapi-interface-impl</module>
+	</modules>
+
+	<build>
+		<plugins>
+			<!-- 编译环境开始 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven_compiler_plugin}</version>
+				<configuration>
+					<source>${java_source_version}</source>
+					<target>${java_target_version}</target>
+					<encoding>${encoding}</encoding>
+				</configuration>
+			</plugin>
+			<!-- 编译环境结束 -->
+		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.json</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.*</include>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+</project>
